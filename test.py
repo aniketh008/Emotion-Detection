@@ -6,11 +6,13 @@ import cv2
 import numpy as np
 from random import randrange
 
+# To Load Harcascade Files
 face_classifier = cv2.CascadeClassifier('/home/aniketh/Projects/Detection/haarcascade_frontalface_default.xml')
 classifier = load_model('/home/aniketh/Projects/Detection/Emotion_Detection.h5')
 
 class_labels = ['Angry','Happy','Neutral','Sad','Suprise']
 
+# To Access the Web Cam
 cap = cv2.VideoCapture(0)
 
 while True:
@@ -19,6 +21,8 @@ while True:
     labels = []
     gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
     faces = face_classifier.detectMultiScale(gray, 1.3, 5)
+    
+    # For Rectangle Around Face 
     
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x,y), (x+w, y+h), (randrange(256),randrange(256),randrange(256)), 4)
