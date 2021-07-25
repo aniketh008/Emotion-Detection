@@ -1,2 +1,2 @@
 # Emotion-Detection
-Emotion-Detection using tensorflow, AI
+Emotion-Detection using Keras and AI
