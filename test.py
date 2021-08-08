@@ -47,6 +47,7 @@ while True:
             cv2.putText(frame,'No Face Found',(20,60),cv2.FONT_HERSHEY_SIMPLEX,2,(0,255,0),3)
         print("\n\n")
     cv2.imshow('Emotion Detector',frame)
+    # For Quiting the Window
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 cap.release()
